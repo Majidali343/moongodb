@@ -1,0 +1,336 @@
+Query 1:  Create collections
+=============================
+
+db.createCollection('JOB_HISTORY')
+db.createCollection('JOBS')
+db.createCollection('DEPARTMENTS')
+db.createCollection('LOCATIONS')
+db.createCollection('EMPLOYEES')
+db.createCollection('COUNTRIES')
+db.createCollection('REGIONS')
+
+Query 2: Create document(insert at least 10 records)
+====================================================
+
+db.COUNTRIES.insertMany([{country_id:1,country_name:'Australia',region_id:2},
+                        {country_id:5,country_name:'Iran',region_id:4},
+                        {country_id:7,country_name:'Malta',region_id:6},
+                        {country_id:9,country_name:'Singapore',region_id:8},
+                        {country_id:11,country_name:'Norway',region_id:10},
+                        {country_id:13,country_name:'China',region_id:12},
+                        {country_id:15,country_name:'Maldevies',region_id:14},
+                        {country_id:17,country_name:'Germany',region_id:16},
+                        {country_id:19,country_name:'America',region_id:18},
+                        {country_id:21,country_name:'Pakistan',region_id:20}])
+
+db.COUNTRIES.find().pretty()
+
+db.DEPARTMENTS.insertMany([{department_id:1,department_name:'Medical',manager_id:2,location_id:3},
+                           {department_id:4,department_name:'Sales',manager_id:5,location_id:6}, 
+                           {department_id:7,department_name:'Finance',manager_id:8,location_id:9},
+                           {department_id:10,department_name:'Administrative',manager_id:11,location_id:12},
+                           {department_id:13,department_name:'Physics',manager_id:14,location_id:15},
+                           {department_id:16,department_name:'Computer Science',manager_id:17,location_id:18},
+                           {department_id:19,department_name:'Engineering',manager_id:20,location_id:21},
+                           {department_id:22,department_name:'Bio Medical',manager_id:23,location_id:24},
+                           {department_id:25,department_name:'Marketing',manager_id:26,location_id:27},
+                           {department_id:28,department_name:'Human Resourses',manager_id:29,location_id:30}]) 
+
+db.DEPARTMENTS.find().pretty()	
+
+
+db.EMPLOYEES.insertMany([{employee_id:1,first_name:'Naqqash',last_name:'Haider',email:'lp6@gmail.com',phone_number:03045,hire_date:"12-11-00",job_id:1,salary:1100,commission_pct:.4,manager_id:1,department_id:1},
+                         {employee_id:2,first_name:'Aakash',last_name:'Haider',email:'g2@gmail.com',phone_number:0673045,hire_date:"10-9-01",job_id:2,salary:10100,commission_pct:.67,manager_id:2,department_id:2},
+                         {employee_id:4,first_name:null,last_name:'Zain',email:'syed1@yahoo.com',phone_number:0453045,hire_date:"1-8-09",job_id:3,salary:14500,commission_pct:.90,manager_id:3,department_id:3},
+                         {employee_id:3,first_name:null,last_name:'Ali',email:'ali2@gmail.com',phone_number:1893045,hire_date:"13-11-08",job_id:4,salary:9800,commission_pct:.49,manager_id:4,department_id:4},
+                         {employee_id:5,first_name:null,last_name:null,email:'p@gmail.com',phone_number:56703045,hire_date:"14-11-04",job_id:5,salary:6700,commission_pct:.39,manager_id:5,department_id:5},
+                         {employee_id:6,first_name:'zaheer',last_name:'Noor',email:'zaheer32@gmail.com',phone_number:023045,hire_date:"12-9-22",job_id:6,salary:111100,commission_pct:.20,manager_id:6,department_id:6},
+                         {employee_id:7,first_name:'Shahid',last_name:'Hafiz',email:'notty5@gmail.com',phone_number:null,hire_date:"12-12-12",job_id:7,salary:91100,commission_pct:.41,manager_id:7,department_id:7},
+                         {employee_id:8,first_name:'Mohsin',last_name:'Javeed',email:'b2b@gmail.com',phone_number:null,hire_date:"11-11-11",job_id:8,salary:561100,commission_pct:.42,manager_id:8,department_id:8},
+                         {employee_id:9,first_name:null,last_name:null,email:null,phone_number:87834,hire_date:"12-1-12",job_id:9,salary:67890,commission_pct:.43,manager_id:9,department_id:9},
+                         {employee_id:10,first_name:'Hamza',last_name:null,email:null,phone_number:93045,hire_date:"20-4-21",job_id:10,salary:null,commission_pct:.44,manager_id:10,department_id:10}])
+                  
+db.EMPLOYEES.find().pretty()   
+
+db.JOBS.insertMany([{job_id:1,job_title:'Manager',min_salary:6000,max_salary:50000},
+                    {job_id:2,job_title:'Peon',min_salary:3000,max_salary:12000},
+                    {job_id:3,job_title:'Assistant',min_salary:8000,max_salary:61000},
+                    {job_id:4,job_title:'Accountant',min_salary:9000,max_salary:82000},
+                    {job_id:5,job_title:'Stock Manager',min_salary:7000,max_salary:92000},
+                    {job_id:6,job_title:'Clerck',min_salary:11000,max_salary:102000},
+                    {job_id:7,job_title:'Assist Accountant',min_salary:10000,max_salary:87000},
+                    {job_id:8,job_title:'Marketing General',min_salary:21000,max_salary:97500},
+                    {job_id:9,job_title:'Typist',min_salary:1000,max_salary:25000},
+                    {job_id:10,job_title:'Representor',min_salary:11000,max_salary:55000}])
+
+db.JOBS.find().pretty()
+
+
+db.JOB_HISTORY.insertMany([{employee_id:1,start_date:'09-JAN-01',end_date:'24-JUL-04',job_id:1,department_id:1},
+                          {employee_id:2,start_date:'16-SEP-94',end_date:'27-OCT-02',job_id:2,department_id:2},
+                          {employee_id:3,start_date:'26-OCT-01',end_date:'15-MAR-07',job_id:3,department_id:3},
+                          {employee_id:4,start_date:'22-FEB-03',end_date:'19-DEC-05',job_id:4,department_id:4},
+                          {employee_id:5,start_date:'13-MAR-04',end_date:'31-DEC-09',job_id:5,department_id:5},
+                          {employee_id:6,start_date:'04-JAN-08',end_date:'31-DEC-11',job_id:6,department_id:6},
+                          {employee_id:7,start_date:'24-SEP-10',end_date:'17-JUN-13',job_id:7,department_id:7},
+                          {employee_id:8,start_date:'24-MAR-06',end_date:'31-DEC-17',job_id:8,department_id:8},
+                          {employee_id:9,start_date:'28-JAN-98',end_date:'31-DEC-02',job_id:9,department_id:9},
+                          {employee_id:10,start_date:'03-JUL-11',end_date:'31-DEC-16',job_id:10,department_id:10}])
+
+db.JOB_HISTORY.find().pretty()
+
+
+db.LOCATIONS.insertMany([{location_id:1,street_adress:'F7 Markaz Islamabad',postal_code:32459,city:'Islamabad',state_province:'Fedral',country_id:1},
+                         {location_id:2,street_adress:'Jail Road',postal_code:32092,city:'Rawalpindi',state_province:'Punjab',country_id:2},
+                         {location_id:3,street_adress:'Civil lines',postal_code:51453,city:'jhang',state_province:'Punjab',country_id:4},
+                         {location_id:4,street_adress:'Sadar Plaza',postal_code:71724,city:'Faisalabad',state_province:'Punjab',country_id:5},
+                         {location_id:5,street_adress:'Food street',postal_code:66621,city:'Karachi',state_province:'Sindh',country_id:6},
+                         {location_id:6,street_adress:'Namkmandi',postal_code:null,city:'Pishawar',state_province:'KPK',country_id:3},
+                         {location_id:7,street_adress:'GT chock',postal_code:52203,city:'lalazar',state_province:'Punjab',country_id:8},
+                         {location_id:8,street_adress:'Chimaa plaza',postal_code:61312,city:'Quetta',state_province:'Blochistan',country_id:null},
+                         {location_id:9,street_adress:null,postal_code:24000,city:'Islamabad',state_province:null,country_id:null},
+                         {location_id:10,street_adress:'Roaza Pur',postal_code:null,city:null,state_province:null,country_id:10}])
+
+db.LOCATIONS.find().pretty()
+
+
+db.REGIONS.insertMany([{region_id:1,region_name:'Austria'},
+                       {region_id:2,region_name:null},
+                       {region_id:3,region_name:'West africa'},	
+                       {region_id:4,region_name:null},
+                       {region_id:5,region_name:'Asia'},
+                       {region_id:6,region_name:'America'},
+                       {region_id:7,region_name:'Europe'},
+                       {region_id:8,region_name:'Keenia'},
+                       {region_id:9,region_name:'Arabia'},
+                       {region_id:10,region_name:null}])
+
+db.REGIONS.find().pretty()
+                       
+             
+
+Query 3: Performing where clause (all operators quires comparison, logical, between
+,in,like)
+===================================================================================
+
+USE OF ONLY FIND()/WHERE CLAUSE ON COUNTRIES COLLECTION
+=======================================================
+db.COUNTRIES.find({country_id:5}).pretty()
+
+USE OF FIND()/WHERE clause to Fetch documents from collection with selective fields
+===================================================================================
+db.COUNTRIES.find({country_id:9},{country_name:1}).pretty()
+
+USE OF FIND()/WHERE clause with All logical operators ($eq,$gt,$gte,$in,$lt,$lte,$ne,$nin)
+==========================================================================================
+db.COUNTRIES.find({country_name:{$eq:'Malta'}})
+
+1. Write Query to show country names where country id is greater than 3
+=======================================================================
+db.COUNTRIES.find({country_id:{$gt:3}},{country_name:1})
+
+2. Write Query to show country names where country id is greater than equal to 3
+=================================================================================
+db.COUNTRIES.find({country_id:{$gte:3}},{country_name:1})
+
+3. Write Query to show country names where country id is less than 5
+======================================================================
+db.COUNTRIES.find({country_id:{$lt:5}},{country_name:1})
+
+4. Write Query to show country names where country id is less than equal to 6
+=============================================================================
+db.COUNTRIES.find({country_id:{$lte:6}},{country_name:1})
+
+5. Write Query to show country names where county id is not equal to 8
+======================================================================
+db.COUNTRIES.find({country_id:{$ne:8}},{country_name:1})
+
+6. Write Query to show country names where country id is in 2,3,5
+===================================================================
+db.COUNTRIES.find({country_id :{$in:[2,3,5]}},{country_name:2})
+
+7. Write Query to show country names where country id is not in 2,3,5
+=====================================================================
+db.COUNTRIES.find({country_id :{$nin:[2,3,5]}},{country_name:2})
+
+8. Write Query to show country names starting with "P"
+========================================================
+db.COUNTRIES.find({country_name:{$regex: /^P/, $options:'m'}})
+
+USE OF WHERE CLAUSE WITH REGEX MATCHING PATTERN ON EMPLOYEES COLLECTION
+
+9. Use REGEX to find those empoyees first_name which starts with "N"
+====================================================================
+db.EMPLOYEES.find({first_name:{$regex:/^N/}})
+
+10. Use REGEX to find those employees first_name which have  character "a" at any place
+========================================================================================
+db.EMPLOYEES.find({first_name:{$regex:/a/}})
+
+11. Use REGEX to find those employees last_name which have last character "d" in it.
+====================================================================================
+db.EMPLOYEES.find({last_name:{$regex:/n$/}})
+
+12.Use REGEX to find those employees last_name which have second character "a" in it.
+=====================================================================================
+db.EMPLOYEES.find({last_name:{$regex:/^.a/}})
+
+USE of WHERE clause with LOCICAL AND COMPARISON QUERY OPERATORS
+===============================================================
+USE of AND OPERATOR
+===================
+13. Write a query to show those employees whose salary is equal to 1100 AND whose first_name contains "a" at any place
+=========================================================================================================================
+db.EMPLOYEES.find({$and:[{salary:{$eq:1100}},{first_name:{$regex:/a/}}]})
+
+14. Write a query to show employee_id of those employees whose salary is equal to 1100 AND whose first_name contains "a" at any place.
+========================================================================================================================================
+db.EMPLOYEES.find({$and:[{salary:{$eq:1100}},{first_name:{$regex:/a/}}]},{employee_id:1})
+
+15. Write a query to show those employees whose salary is less than 6000 OR whose first_name starts with character "A"
+=========================================================================================================================
+db.EMPLOYEES.find({$or:[{salary:{$lt:6000}},{first_name:{$regex:/^A/}}]})
+
+16.Write a query to show employee_id of those employees whose salary is less than 6000 OR whose first_name starts with character "A"
+====================================================================================================================================
+db.EMPLOYEES.find({$or:[{salary:{$lt:6000}},{first_name:{$regex:/^A/}}]},{employee_id:1})
+
+17.Write a query to show those employees whose first_name does NOT contains character "e" at any place
+======================================================================================================
+db.EMPLOYEES.find({first_name:{$not:{$regex:/e/}}})
+
+18.Write a query to show email of those employees whose first_name does NOT contains character "e" at any place
+================================================================================================================
+db.EMPLOYEES.find({first_name:{$not:{$regex:/e/}}},{email:1})
+
+19. Write a query to show those employees whose salary is not less than 6000 OR whose first_name does not contains the last character "n" in it.
+=================================================================================================================================================
+db.EMPLOYEES.find({$nor:[{salary:{$lt:6000}},{first_name:{$regex:/n$/}}]})
+
+20. Write a query to show hire_date of those employees  whose salary is not less than 6000 OR whose first_name does not contains the last character "n" in it.
+==============================================================================================================================================================
+db.EMPLOYEES.find({$nor:[{salary:{$lt:6000}},{first_name:{$regex:/n$/}}]},{hire_date:1})
+
+Query 4: Embedded Documents
+============================
+db.EMPLOYEES.insertOne({Game:"GTA V",platform:"Pc,Vr,Xbox,Ps5",requirements:{Processor:"Intel corei7",Ram:"4gb"},ReleaseDate:{date:"Jan 01 2021"})
+
+Query 5:Aggregate Functions in mongodb
+COUNT
+=======================================
+db.DEPARTMENTS.count({department_name:"Medical"})
+
+DISTINCT
+
+db.COUNTRIES.distinct.("country")
+
+SUM
+====
+db.EMPLOYEES.aggregate( [ {$group:{_id: "$employee_id", total: {$sum: "$salary"}}}])
+
+db.EMPLOYEES.aggregate( [ {$group:{_id: "$employee_id:1", total: {$sum: "$salary"}}}])
+
+MAX
+====
+db.EMPLOYEES.aggregate( [ {$group:{_id: "$employee_id:1", total: {$max: "$salary"}}}])
+  
+db.EMPLOYEES.aggregate( [ {$group:{_id: "$employee_id", total: {$max: "$salary"}}}])
+
+MIN
+====
+db.EMPLOYEES.aggregate( [ {$group:{_id: "$employee_id:1", total: {$min: "$salary"}}}])
+
+db.EMPLOYEES.aggregate( [ {$group:{_id: "$employee_id", total: {$sum: "$salary"}}}])
+
+FIRST
+======
+db.EMPLOYEES.aggregate( [ {$group:{_id: "$employee_id:1", total: {$first: "$salary"}}}])
+
+db.EMPLOYEES.aggregate( [ {$group:{_id: "$employee_id", total: {$first: "$salary"}}}])
+
+LAST
+=====
+db.EMPLOYEES.aggregate( [ {$group:{_id: "$employee_id:1", total: {$last: "$salary"}}}])
+
+db.EMPLOYEES.aggregate( [ {$group:{_id: "$employee_id", total: {$last: "$salary"}}}])
+
+CONCAT
+=======
+db.LOCATIONS.aggregate(
+   [
+      { $project: { address: { $concat: [ "$street_adress", " - ", "$city" ] } } }
+   ]
+)
+
+MATCH
+======
+db.LOCATIONS.aggregate([{ $match: { "country_id": 2 } }])
+
+
+Query 6: Group by command
+==========================
+db.COUNTRIES.aggregate([ {"$group":{ _id:"$country_id",count:{$sum:1}}}])
+
+db.COUNTRIES.aggregate([
+{
+    $group:{_id:"$country_id",count:{$sum:1}}}
+
+  ]),
+
+{
+
+JOIN
+=====
+db.DEPARTMENTS.aggregate([
+   {
+     $lookup:
+       {
+         from: "LOCATIONS",
+         localField: "city",
+         foreignField: "hire_date",
+         as: "EMPLOYEES_docs"
+       }
+  }
+])
+
+db.collection.aggregate([
+   { $lookup: { from: "fromCollection", ... } }
+])
+
+$sort:{"count":-1}
+
+}
+])
+
+Query 7: Update and deleting records mongodb
+=============================================
+db.JOBS.update({'job_id':1},{$set:{job_title:'Manager'}})
+db.JOBS.update({'job_id':2},{$set:{min_salary:500}})
+db.JOBS.update({'job_id':10},{$set:{max_salary:3000}})
+db.JOBS.deleteOne( { job_title: "clerk" } )
+
+
+Query8: How to drop collection
+
+===============================
+db.JOBS.drop()
+
+
+Query 9: How to truncate a collection
+======================================
+db.JOB_HISTORY.remove({job_id:1})
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+    
